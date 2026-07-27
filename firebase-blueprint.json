@@ -1,0 +1,101 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profile",
+      "description": "User profiles for team members and personas",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string" },
+        "avatar": { "type": "string" },
+        "department": { "type": "string" },
+        "status": { "type": "string" },
+        "skills": { "type": "object" }
+      },
+      "required": ["id", "name", "email", "role"]
+    },
+    "channels": {
+      "title": "Discussion Channel",
+      "description": "Public, private, and AI-assisted channels",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "projectId": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "type": { "type": "string" }
+      },
+      "required": ["id", "name", "type"]
+    },
+    "messages": {
+      "title": "Chat Message",
+      "description": "Messages sent within channels and threads",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "channelId": { "type": "string" },
+        "senderId": { "type": "string" },
+        "senderName": { "type": "string" },
+        "senderRole": { "type": "string" },
+        "senderAvatar": { "type": "string" },
+        "content": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "isAI": { "type": "boolean" },
+        "aiPersonaId": { "type": "string" },
+        "reactions": { "type": "array" },
+        "attachments": { "type": "array" },
+        "codeSnippet": { "type": "object" },
+        "isPinned": { "type": "boolean" }
+      },
+      "required": ["id", "channelId", "senderId", "content", "timestamp"]
+    },
+    "tasks": {
+      "title": "Sprint Task",
+      "description": "Agile tasks for Jira-like sprint board",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "key": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "status": { "type": "string" },
+        "priority": { "type": "string" },
+        "assigneeId": { "type": "string" },
+        "projectId": { "type": "string" },
+        "storyPoints": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "key", "title", "status"]
+    },
+    "knowledgeDocs": {
+      "title": "Knowledge Document",
+      "description": "Documentation and architecture specs",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "content": { "type": "string" },
+        "authorName": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "title", "content"]
+    },
+    "auditLogs": {
+      "title": "System Audit Log",
+      "description": "Compliance and enterprise audit logs",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "action": { "type": "string" },
+        "severity": { "type": "string" }
+      },
+      "required": ["id", "timestamp", "action"]
+    }
+  }
+}

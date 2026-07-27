@@ -1,0 +1,6 @@
+{
+  "name": "AI Engineering Collaboration Platform",
+  "description": "Enterprise AI-powered engineering collaboration platform combining chat, Jira tasks, Notion knowledge base, AI personas, and manager analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
